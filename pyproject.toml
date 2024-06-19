@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
-cookiecutter-django = "^1.11.9"
+cookiecutter = "^2.6.0"
 
 [build-system]
 requires = ["poetry-core"]
