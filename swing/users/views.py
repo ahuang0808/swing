@@ -1,7 +1,11 @@
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils.translation import activate
 from django.utils.translation import gettext_lazy as _
+from django.views import View
 from django.views.generic import DetailView
 from django.views.generic import RedirectView
 from django.views.generic import UpdateView
@@ -43,3 +47,14 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 user_redirect_view = UserRedirectView.as_view()
+
+
+class SetLanguageView(View):
+    def get(self, request, *args, **kwargs):
+        lang_code = request.GET.get("language", settings.LANGUAGE_CODE)
+        if lang_code and lang_code in dict(settings.LANGUAGES):
+            activate(lang_code)
+            response = redirect(request.headers.get("referer", "/"))
+            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+            return response
+        return redirect(request.headers.get("referer", "/"))
