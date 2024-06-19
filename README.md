@@ -7,6 +7,11 @@ Swing website.
 
 License: MIT
 
+## Run Environment
+
+- [Postgres](https://www.postgresql.org/download/macosx/)
+- `export DJANGO_READ_DOT_ENV_FILE=True`
+
 ## Settings
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
