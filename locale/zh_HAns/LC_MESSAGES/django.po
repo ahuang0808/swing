@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 12:46+0800\n"
+"POT-Creation-Date: 2024-06-20 13:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,11 +50,12 @@ msgstr "珠子形状"
 msgid "Bead Shapes"
 msgstr "珠子形状"
 
-#: swing/jewelry/models/bead.py:50
+#: swing/jewelry/models/bead.py:50 swing/jewelry/models/bead.py:105
+#: swing/jewelry/models/bead.py:109
 msgid "Bead Shape Attribute"
 msgstr "珠子形状词条"
 
-#: swing/jewelry/models/bead.py:51
+#: swing/jewelry/models/bead.py:51 swing/jewelry/models/bead.py:110
 msgid "Bead Shape Attributes"
 msgstr "珠子形状词条"
 
@@ -94,23 +95,19 @@ msgid "Purcharse Link"
 msgstr "采购链接"
 
 #: swing/jewelry/models/bead.py:88
-msgid "Shape Attribute"
-msgstr ""
-
-#: swing/jewelry/models/bead.py:90
 msgid "Shape"
 msgstr "形状"
 
-#: swing/jewelry/models/bead.py:91 swing/jewelry/models/hardware.py:70
+#: swing/jewelry/models/bead.py:89 swing/jewelry/models/hardware.py:70
 msgid "Material"
 msgstr "材质"
 
-#: swing/jewelry/models/bead.py:94 swing/jewelry/models/jewelry.py:92
+#: swing/jewelry/models/bead.py:92 swing/jewelry/models/jewelry.py:92
 #: swing/jewelry/models/jewelry.py:97
 msgid "Bead"
 msgstr "珠子"
 
-#: swing/jewelry/models/bead.py:95 swing/jewelry/models/jewelry.py:98
+#: swing/jewelry/models/bead.py:93 swing/jewelry/models/jewelry.py:98
 msgid "Beads"
 msgstr "珠子"
 

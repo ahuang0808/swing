@@ -2,6 +2,7 @@ from django.db.models import PROTECT
 from django.db.models import CharField
 from django.db.models import DecimalField
 from django.db.models import ForeignKey
+from django.db.models import ManyToManyField
 from django.db.models import Model
 from django.db.models import URLField
 from django.utils.translation import gettext_lazy as _
@@ -84,10 +85,9 @@ class Bead(Model):
         max_length=255,
         verbose_name=_("Purcharse Link"),
     )
-    shape_attribute = ForeignKey(
+    bead_shape_attributes = ManyToManyField(
         BeadShapeAttribute,
-        on_delete=PROTECT,
-        verbose_name=_("Shape Attribute"),
+        through="LinkBeadBeadShapeAttribute",
     )
     shape = ForeignKey(BeadShape, on_delete=PROTECT, verbose_name=_("Shape"))
     material = ForeignKey(BeadMaterial, on_delete=PROTECT, verbose_name=_("Material"))
@@ -98,3 +98,24 @@ class Bead(Model):
 
     def __str__(self):
         return f"{self.color} {self.material} {self.shape}"
+
+
+class LinkBeadBeadShapeAttribute(Model):
+    """
+    Bead Bead Shape Attribute many to many model.
+    """
+
+    bead = ForeignKey(Bead, on_delete=PROTECT)
+    bead_shape_attribute = ForeignKey(
+        BeadShapeAttribute,
+        on_delete=PROTECT,
+        verbose_name=_("Bead Shape Attribute"),
+    )
+
+    class Meta:
+        unique_together = ["bead", "bead_shape_attribute"]
+        verbose_name = _("Bead Shape Attribute")
+        verbose_name_plural = _("Bead Shape Attributes")
+
+    def __str__(self):
+        return f"{self.bead_shape_attribute.name} - {self.bead.name}"
