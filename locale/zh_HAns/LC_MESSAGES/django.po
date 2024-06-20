@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 12:13+0800\n"
+"POT-Creation-Date: 2024-06-20 12:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
 #: config/settings/base.py:33
 msgid "English"
-msgstr "英语"
+msgstr "英文"
 
 #: config/settings/base.py:34
 msgid "Simpified Chinese"
@@ -43,10 +42,8 @@ msgid "Bead Materials"
 msgstr "珠子材质"
 
 #: swing/jewelry/models/bead.py:35 swing/jewelry/models/bead.py:36
-#, fuzzy
-#| msgid "Bead Material"
 msgid "Bead Shape"
-msgstr "珠子材质"
+msgstr "珠子形状"
 
 #: swing/jewelry/models/bead.py:50 swing/jewelry/models/hardware.py:50
 msgid "Length"
@@ -65,7 +62,7 @@ msgstr "直径"
 
 #: swing/jewelry/models/bead.py:62
 msgid "Pore Diameter"
-msgstr "孔径"
+msgstr "管径"
 
 #: swing/jewelry/models/bead.py:65 swing/jewelry/models/color.py:14
 #: swing/jewelry/models/hardware.py:59
@@ -81,7 +78,7 @@ msgstr "单价"
 #: swing/jewelry/models/bead.py:70 swing/jewelry/models/hardware.py:65
 #: swing/jewelry/models/jewelry_string.py:49
 msgid "Purcharse Link"
-msgstr "购买链接"
+msgstr "采购链接"
 
 #: swing/jewelry/models/bead.py:72
 msgid "Shape"
@@ -178,14 +175,10 @@ msgid "Jewelry Strings"
 msgstr "首饰线材"
 
 #: swing/jewelry/models/jewelry_string.py:20
-#, fuzzy
-#| msgid "Jewelry String"
 msgid "Jewelry String Type"
 msgstr "首饰线材类型"
 
 #: swing/jewelry/models/jewelry_string.py:21
-#, fuzzy
-#| msgid "Jewelry Strings"
 msgid "Jewelry String Types"
 msgstr "首饰线材类型"
 
@@ -207,15 +200,15 @@ msgstr "关于"
 
 #: swing/templates/base.html:83
 msgid "My Profile"
-msgstr "账户"
+msgstr ""
 
 #: swing/templates/base.html:87
 msgid "Sign Out"
-msgstr "登出"
+msgstr ""
 
 #: swing/templates/base.html:93
 msgid "Sign Up"
-msgstr "注册"
+msgstr ""
 
 #: swing/users/admin.py:24
 msgid "Personal info"
