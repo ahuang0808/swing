@@ -121,4 +121,4 @@ class LinkBeadBeadShapeAttribute(Model):
         verbose_name_plural = _("Bead Shape Attributes")
 
     def __str__(self):
-        return f"{self.bead.name} - {self.bead_shape_attribute.name}"
+        return f"{self.bead!s} - {self.bead_shape_attribute.name}"
