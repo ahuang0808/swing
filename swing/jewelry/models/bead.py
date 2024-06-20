@@ -33,7 +33,22 @@ class BeadShape(Model):
 
     class Meta:
         verbose_name = _("Bead Shape")
-        verbose_name_plural = _("Bead Shape")
+        verbose_name_plural = _("Bead Shapes")
+
+    def __str__(self):
+        return self.name
+
+
+class BeadShapeAttribute(Model):
+    """
+    Bead shape attribute model.
+    """
+
+    name = CharField(max_length=255, verbose_name=_("Name"))
+
+    class Meta:
+        verbose_name = _("Bead Shape Attribute")
+        verbose_name_plural = _("Bead Shape Attributes")
 
     def __str__(self):
         return self.name
@@ -68,6 +83,11 @@ class Bead(Model):
         blank=True,
         max_length=255,
         verbose_name=_("Purcharse Link"),
+    )
+    shape_attribute = ForeignKey(
+        BeadShapeAttribute,
+        on_delete=PROTECT,
+        verbose_name=_("Shape Attribute"),
     )
     shape = ForeignKey(BeadShape, on_delete=PROTECT, verbose_name=_("Shape"))
     material = ForeignKey(BeadMaterial, on_delete=PROTECT, verbose_name=_("Material"))
