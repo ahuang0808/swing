@@ -97,7 +97,10 @@ class Bead(Model):
         verbose_name_plural = _("Beads")
 
     def __str__(self):
-        return f"{self.color} {self.material} {self.shape}"
+        attributes_list = []
+        for linkbeadbeadattribute in self.linkbeadbeadattribute_set.all():
+            attributes_list += linkbeadbeadattribute.bead_shape_attribute.name
+        return f"{self.color} {self.material} {" ".join(attributes_list)} {self.shape}"
 
 
 class LinkBeadBeadShapeAttribute(Model):
@@ -118,4 +121,4 @@ class LinkBeadBeadShapeAttribute(Model):
         verbose_name_plural = _("Bead Shape Attributes")
 
     def __str__(self):
-        return f"{self.bead_shape_attribute.name} - {self.bead.name}"
+        return f"{self.bead.name} - {self.bead_shape_attribute.name}"
