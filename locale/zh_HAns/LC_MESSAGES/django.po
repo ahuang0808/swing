@@ -76,7 +76,7 @@ msgstr "直径"
 
 #: swing/jewelry/models/bead.py:77
 msgid "Pore Diameter"
-msgstr "管径"
+msgstr "孔径"
 
 #: swing/jewelry/models/bead.py:80 swing/jewelry/models/color.py:14
 #: swing/jewelry/models/hardware.py:59

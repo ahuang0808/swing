@@ -100,7 +100,14 @@ class Bead(Model):
         attributes_list = []
         for linkbeadbeadshapeattribute in self.linkbeadbeadshapeattribute_set.all():
             attributes_list += linkbeadbeadshapeattribute.bead_shape_attribute.name
-        return f"{self.color} {self.material} {"".join(attributes_list)} {self.shape}"
+        return "{} {} {}X{} {} {}".format(
+            self.color,
+            self.material,
+            self.length,
+            self.diameter,
+            "".join(attributes_list),
+            self.shape,
+        )
 
 
 class LinkBeadBeadShapeAttribute(Model):
