@@ -4,6 +4,7 @@ from django.contrib.admin import TabularInline
 
 from swing.jewelry.models.bead import Bead
 from swing.jewelry.models.bead import BeadMaterial
+from swing.jewelry.models.bead import BeadShape
 from swing.jewelry.models.color import Color
 from swing.jewelry.models.hardware import Hardware
 from swing.jewelry.models.hardware import HardwareMaterial
@@ -57,6 +58,7 @@ class JewelryAdmin(ModelAdmin):
 
 admin.site.register(Bead)
 admin.site.register(BeadMaterial)
+admin.site.register(BeadShape)
 admin.site.register(Color)
 admin.site.register(Hardware)
 admin.site.register(HardwareMaterial)
