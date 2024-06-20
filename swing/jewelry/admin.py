@@ -15,6 +15,7 @@ from swing.jewelry.models.jewelry import LinkJewelryHardware
 from swing.jewelry.models.jewelry import LinkJewelryJewelryString
 from swing.jewelry.models.jewelry import Series
 from swing.jewelry.models.jewelry_string import JewelryString
+from swing.jewelry.models.jewelry_string import JewelryStringType
 
 
 class LinkJewelryBeadInline(TabularInline):
@@ -61,5 +62,6 @@ admin.site.register(Hardware)
 admin.site.register(HardwareMaterial)
 admin.site.register(HardwareType)
 admin.site.register(JewelryString)
+admin.site.register(JewelryStringType)
 admin.site.register(Series)
 admin.site.register(JewelryType)
