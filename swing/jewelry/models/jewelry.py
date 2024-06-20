@@ -98,7 +98,7 @@ class LinkJewelryBead(Model):
         verbose_name_plural = _("Beads")
 
     def __str__(self):
-        return f"{self.jewelry.name} - {self.bead.name} * {self.quantity}"
+        return f"{self.jewelry.name} - {self.bead!s} * {self.quantity}"
 
 
 class LinkJewelryHardware(Model):
@@ -120,7 +120,7 @@ class LinkJewelryHardware(Model):
         verbose_name_plural = _("Hardwares")
 
     def __str__(self):
-        return f"{self.jewelry.name} - {self.hardware.name} * {self.quantity}"
+        return f"{self.jewelry.name} - {self.hardware!s} * {self.quantity}"
 
 
 class LinkJewelryJewelryString(Model):
@@ -142,4 +142,4 @@ class LinkJewelryJewelryString(Model):
         verbose_name_plural = _("Jewelry Strings")
 
     def __str__(self):
-        return f"{self.jewelry.name} - {self.jewelry_string.name} * {self.quantity}mm"
+        return f"{self.jewelry.name} - {self.jewelry_string!s} * {self.quantity}mm"
