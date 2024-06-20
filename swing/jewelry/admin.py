@@ -2,18 +2,19 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin import TabularInline
 
-from swing.jewelries.models.bead import Bead
-from swing.jewelries.models.bead import BeadMaterial
-from swing.jewelries.models.hardware import Hardware
-from swing.jewelries.models.hardware import HardwareMaterial
-from swing.jewelries.models.hardware import HardwareType
-from swing.jewelries.models.jewelry import Jewelry
-from swing.jewelries.models.jewelry import JewelryType
-from swing.jewelries.models.jewelry import LinkJewelryBead
-from swing.jewelries.models.jewelry import LinkJewelryHardware
-from swing.jewelries.models.jewelry import LinkJewelryJewelryString
-from swing.jewelries.models.jewelry import Series
-from swing.jewelries.models.jewelry_string import JewelryString
+from swing.jewelry.models.bead import Bead
+from swing.jewelry.models.bead import BeadMaterial
+from swing.jewelry.models.color import Color
+from swing.jewelry.models.hardware import Hardware
+from swing.jewelry.models.hardware import HardwareMaterial
+from swing.jewelry.models.hardware import HardwareType
+from swing.jewelry.models.jewelry import Jewelry
+from swing.jewelry.models.jewelry import JewelryType
+from swing.jewelry.models.jewelry import LinkJewelryBead
+from swing.jewelry.models.jewelry import LinkJewelryHardware
+from swing.jewelry.models.jewelry import LinkJewelryJewelryString
+from swing.jewelry.models.jewelry import Series
+from swing.jewelry.models.jewelry_string import JewelryString
 
 
 class LinkJewelryBeadInline(TabularInline):
@@ -55,6 +56,7 @@ class JewelryAdmin(ModelAdmin):
 
 admin.site.register(Bead)
 admin.site.register(BeadMaterial)
+admin.site.register(Color)
 admin.site.register(Hardware)
 admin.site.register(HardwareMaterial)
 admin.site.register(HardwareType)

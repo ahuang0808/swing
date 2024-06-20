@@ -6,6 +6,8 @@ from django.db.models import Model
 from django.db.models import URLField
 from django.utils.translation import gettext_lazy as _
 
+from swing.jewelry.models.color import Color
+
 
 class HardwareType(Model):
     """
@@ -42,7 +44,6 @@ class Hardware(Model):
     Hardware model.
     """
 
-    name = CharField(max_length=255, verbose_name=_("Name"))
     length = DecimalField(
         max_digits=10,
         decimal_places=1,
@@ -55,6 +56,7 @@ class Hardware(Model):
         verbose_name=_("Width"),
         help_text=_("The unit is millimeter."),
     )
+    color = ForeignKey(Color, on_delete=PROTECT, verbose_name=_("Color"))
     type = ForeignKey(HardwareType, on_delete=PROTECT, verbose_name=_("Type"))
     price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
     purcharse_link = URLField(
@@ -73,4 +75,4 @@ class Hardware(Model):
         verbose_name_plural = _("Hardwares")
 
     def __str__(self):
-        return self.name
+        return f"{self.color} {self.material} {self.type}"

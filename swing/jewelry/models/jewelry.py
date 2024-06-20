@@ -7,9 +7,9 @@ from django.db.models import Model
 from django.db.models import PositiveIntegerField
 from django.utils.translation import gettext_lazy as _
 
-from swing.jewelries.models.bead import Bead
-from swing.jewelries.models.hardware import Hardware
-from swing.jewelries.models.jewelry_string import JewelryString
+from swing.jewelry.models.bead import Bead
+from swing.jewelry.models.hardware import Hardware
+from swing.jewelry.models.jewelry_string import JewelryString
 
 
 class Series(Model):
