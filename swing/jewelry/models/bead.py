@@ -98,8 +98,8 @@ class Bead(Model):
 
     def __str__(self):
         attributes_list = []
-        for linkbeadbeadattribute in self.linkbeadbeadattribute_set.all():
-            attributes_list += linkbeadbeadattribute.bead_shape_attribute.name
+        for linkbeadbeadshapeattribute in self.linkbeadbeadshapeattribute_set.all():
+            attributes_list += linkbeadbeadshapeattribute.bead_shape_attribute.name
         return f"{self.color} {self.material} {" ".join(attributes_list)} {self.shape}"
 
 
