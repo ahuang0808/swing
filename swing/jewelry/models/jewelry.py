@@ -137,7 +137,6 @@ class LinkJewelryJewelryString(Model):
     quantity = PositiveIntegerField(verbose_name=_("Quantity"))
 
     class Meta:
-        unique_together = ["jewelry", "jewelry_string"]
         verbose_name = _("Jewelry String")
         verbose_name_plural = _("Jewelry Strings")
 
