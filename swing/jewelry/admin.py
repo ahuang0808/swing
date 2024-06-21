@@ -56,13 +56,7 @@ class JewelryAdmin(ModelAdmin):
         LinkJewelryJewelryStringInline,
         LinkJewelryPackageInline,
     ]
-    list_display = ("name", "get_length", "get_cost", "price")
-
-    @admin.display(
-        description=_("Length"),
-    )
-    def get_length(self, obj):
-        return obj.length()
+    list_display = ("name", "length", "get_cost", "price")
 
     @admin.display(
         description=_("Cost"),

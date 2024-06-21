@@ -52,6 +52,10 @@ class Jewelry(Model):
     name = CharField(max_length=255, verbose_name=_("Name"))
     serious = ForeignKey(Series, on_delete=PROTECT, verbose_name=_("Serious"))
     type = ForeignKey(JewelryType, on_delete=PROTECT, verbose_name=_("Type"))
+    length = PositiveIntegerField(
+        verbose_name=_("Length"),
+        help_text=_("The unit is millimeter."),
+    )
     price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
     beads = ManyToManyField(Bead, through="LinkJewelryBead")
     hardwares = ManyToManyField(Hardware, through="LinkJewelryHardware")
@@ -64,14 +68,6 @@ class Jewelry(Model):
 
     def __str__(self):
         return self.name
-
-    def length(self):
-        length = 0
-        for linkjewelrybead in self.linkjewelrybead_set.all():
-            length += linkjewelrybead.bead.length * linkjewelrybead.quantity
-        for linkjewelryhardware in self.linkjewelryhardware_set.filter(is_main=True):
-            length += linkjewelryhardware.hardware.length * linkjewelryhardware.quantity
-        return length
 
     def cost(self):
         cost = 0
