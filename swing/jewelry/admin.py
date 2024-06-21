@@ -16,6 +16,7 @@ from swing.jewelry.models.jewelry import JewelryType
 from swing.jewelry.models.jewelry import LinkJewelryBead
 from swing.jewelry.models.jewelry import LinkJewelryHardware
 from swing.jewelry.models.jewelry import LinkJewelryJewelryString
+from swing.jewelry.models.jewelry import LinkJewelryPackage
 from swing.jewelry.models.jewelry import Series
 from swing.jewelry.models.jewelry_string import JewelryString
 from swing.jewelry.models.jewelry_string import JewelryStringType
@@ -41,12 +42,18 @@ class LinkBeadBeadShapeAttributeInline(TabularInline):
     extra = 1
 
 
+class LinkJewelryPackageInline(TabularInline):
+    model = LinkJewelryPackage
+    extra = 1
+
+
 @admin.register(Jewelry)
 class JewelryAdmin(ModelAdmin):
     inlines = [
         LinkJewelryBeadInline,
         LinkJewelryHardwareInline,
         LinkJewelryJewelryStringInline,
+        LinkJewelryPackageInline,
     ]
     list_display = ("name", "get_length", "get_price")
 

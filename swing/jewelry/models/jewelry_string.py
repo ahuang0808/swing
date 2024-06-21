@@ -43,10 +43,10 @@ class JewelryString(Model):
         verbose_name=_("Price"),
         help_text=_("Price per mm"),
     )  # per mm
-    purcharse_link = URLField(
+    purchase_link = URLField(
         blank=True,
         max_length=255,
-        verbose_name=_("Purcharse Link"),
+        verbose_name=_("Purchase Link"),
     )
 
     class Meta:

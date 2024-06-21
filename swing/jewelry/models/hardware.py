@@ -59,10 +59,10 @@ class Hardware(Model):
     color = ForeignKey(Color, on_delete=PROTECT, verbose_name=_("Color"))
     type = ForeignKey(HardwareType, on_delete=PROTECT, verbose_name=_("Type"))
     price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
-    purcharse_link = URLField(
+    purchase_link = URLField(
         blank=True,
         max_length=255,
-        verbose_name=_("Purcharse Link"),
+        verbose_name=_("Purchase Link"),
     )
     material = ForeignKey(
         HardwareMaterial,

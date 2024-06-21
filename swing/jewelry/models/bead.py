@@ -80,10 +80,10 @@ class Bead(Model):
     )
     color = ForeignKey(Color, on_delete=PROTECT, verbose_name=_("Color"))
     price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
-    purcharse_link = URLField(
+    purchase_link = URLField(
         blank=True,
         max_length=255,
-        verbose_name=_("Purcharse Link"),
+        verbose_name=_("Purchase Link"),
     )
     bead_shape_attributes = ManyToManyField(
         BeadShapeAttribute,

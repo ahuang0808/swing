@@ -10,6 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from swing.jewelry.models.bead import Bead
 from swing.jewelry.models.hardware import Hardware
 from swing.jewelry.models.jewelry_string import JewelryString
+from swing.package.models.package import Package
 
 
 class Series(Model):
@@ -53,6 +54,7 @@ class Jewelry(Model):
     beads = ManyToManyField(Bead, through="LinkJewelryBead")
     hardwares = ManyToManyField(Hardware, through="LinkJewelryHardware")
     strings = ManyToManyField(JewelryString, through="LinkJewelryJewelryString")
+    packages = ManyToManyField(Package, through="LinkJewelryPackage")
 
     class Meta:
         verbose_name = _("Jewelry")
@@ -80,6 +82,8 @@ class Jewelry(Model):
                 linkjewelryjewelrystring.jewelry_string.price
                 * linkjewelryjewelrystring.quantity
             )
+        for linkjewelrypackage in self.linkjewelrypackage_set.all():
+            price += linkjewelrypackage.package.price * linkjewelrypackage.quantity
         return price
 
 
@@ -142,3 +146,24 @@ class LinkJewelryJewelryString(Model):
 
     def __str__(self):
         return f"{self.jewelry.name} - {self.jewelry_string!s} * {self.quantity}mm"
+
+
+class LinkJewelryPackage(Model):
+    """
+    Jewelry package many to many model.
+    """
+
+    jewelry = ForeignKey(Jewelry, on_delete=PROTECT)
+    package = ForeignKey(
+        Package,
+        on_delete=PROTECT,
+        verbose_name=_("Package"),
+    )
+    quantity = PositiveIntegerField(verbose_name=_("Quantity"))
+
+    class Meta:
+        verbose_name = _("Package")
+        verbose_name_plural = _("Packages")
+
+    def __str__(self):
+        return f"{self.jewelry.name} - {self.package!s} * {self.quantity}"

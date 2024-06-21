@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('diameter', models.DecimalField(decimal_places=1, help_text='The unit is millimeter.', max_digits=10, verbose_name='Diameter')),
                 ('pore_diameter', models.DecimalField(decimal_places=1, help_text='The unit is millimeter.', max_digits=10, verbose_name='Pore Diameter')),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
-                ('purcharse_link', models.URLField(blank=True, max_length=255, verbose_name='Purcharse Link')),
+                ('purchase_link', models.URLField(blank=True, max_length=255, verbose_name='purchase Link')),
             ],
             options={
                 'verbose_name': 'Bead',
@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
                 ('length', models.DecimalField(decimal_places=1, help_text='The unit is millimeter.', max_digits=10, verbose_name='Length')),
                 ('width', models.DecimalField(decimal_places=1, help_text='The unit is millimeter.', max_digits=10, verbose_name='Width')),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
-                ('purcharse_link', models.URLField(blank=True, max_length=255, verbose_name='Purcharse Link')),
+                ('purchase_link', models.URLField(blank=True, max_length=255, verbose_name='purchase Link')),
                 ('color', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='jewelry.color', verbose_name='Color')),
             ],
             options={
@@ -114,7 +114,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('diameter', models.DecimalField(decimal_places=1, help_text='The unit is millimeter.', max_digits=10, verbose_name='Diameter')),
                 ('price', models.DecimalField(decimal_places=3, help_text='Price per mm', max_digits=10, verbose_name='Price')),
-                ('purcharse_link', models.URLField(blank=True, max_length=255, verbose_name='Purcharse Link')),
+                ('purchase_link', models.URLField(blank=True, max_length=255, verbose_name='purchase Link')),
                 ('color', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='jewelry.color', verbose_name='Color')),
             ],
             options={
