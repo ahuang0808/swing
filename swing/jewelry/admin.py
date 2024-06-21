@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin import TabularInline
+from django.utils.translation import gettext_lazy as _
 
 from swing.jewelry.models.bead import Bead
 from swing.jewelry.models.bead import BeadMaterial
@@ -55,19 +56,19 @@ class JewelryAdmin(ModelAdmin):
         LinkJewelryJewelryStringInline,
         LinkJewelryPackageInline,
     ]
-    list_display = ("name", "get_length", "get_price")
+    list_display = ("name", "get_length", "get_cost", "price")
 
     @admin.display(
-        description="Length",
+        description=_("Length"),
     )
     def get_length(self, obj):
         return obj.length()
 
     @admin.display(
-        description="Price",
+        description=_("Cost"),
     )
-    def get_price(self, obj):
-        return obj.price()
+    def get_cost(self, obj):
+        return obj.cost()
 
 
 @admin.register(Bead)

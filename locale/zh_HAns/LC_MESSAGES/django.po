@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 10:57+0800\n"
+"POT-Creation-Date: 2024-06-21 12:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,21 @@ msgstr "英文"
 msgid "Simpified Chinese"
 msgstr "简体中文"
 
+#: swing/jewelry/admin.py:62 swing/jewelry/models/bead.py:66
+#: swing/jewelry/models/hardware.py:50
+msgid "Length"
+msgstr "长度"
+
+#: swing/jewelry/admin.py:68
+msgid "Cost"
+msgstr "成本"
+
 #: swing/jewelry/models/bead.py:18 swing/jewelry/models/bead.py:33
 #: swing/jewelry/models/bead.py:48 swing/jewelry/models/color.py:11
 #: swing/jewelry/models/hardware.py:17 swing/jewelry/models/hardware.py:32
 #: swing/jewelry/models/jewelry.py:21 swing/jewelry/models/jewelry.py:36
 #: swing/jewelry/models/jewelry.py:51 swing/jewelry/models/jewelry_string.py:17
-#: swing/package/models/package.py:11
+#: swing/package/models/package.py:13
 msgid "Name"
 msgstr "名称"
 
@@ -51,18 +60,14 @@ msgstr "珠子形状"
 msgid "Bead Shapes"
 msgstr "珠子形状"
 
-#: swing/jewelry/models/bead.py:51 swing/jewelry/models/bead.py:123
-#: swing/jewelry/models/bead.py:128
+#: swing/jewelry/models/bead.py:51 swing/jewelry/models/bead.py:122
+#: swing/jewelry/models/bead.py:127
 msgid "Bead Shape Attribute"
 msgstr "珠子形状词条"
 
-#: swing/jewelry/models/bead.py:52 swing/jewelry/models/bead.py:129
+#: swing/jewelry/models/bead.py:52 swing/jewelry/models/bead.py:128
 msgid "Bead Shape Attributes"
 msgstr "珠子形状词条"
-
-#: swing/jewelry/models/bead.py:66 swing/jewelry/models/hardware.py:50
-msgid "Length"
-msgstr "长度"
 
 #: swing/jewelry/models/bead.py:67 swing/jewelry/models/bead.py:73
 #: swing/jewelry/models/bead.py:79 swing/jewelry/models/hardware.py:51
@@ -86,31 +91,32 @@ msgid "Color"
 msgstr "颜色"
 
 #: swing/jewelry/models/bead.py:82 swing/jewelry/models/hardware.py:61
-#: swing/jewelry/models/jewelry_string.py:43 swing/package/models/package.py:12
+#: swing/jewelry/models/jewelry.py:54 swing/jewelry/models/jewelry_string.py:43
+#: swing/package/models/package.py:14
 msgid "Price"
 msgstr "单价"
 
-#: swing/jewelry/models/bead.py:87 swing/jewelry/models/hardware.py:66
-#: swing/jewelry/models/jewelry_string.py:50 swing/package/models/package.py:17
+#: swing/jewelry/models/bead.py:86 swing/jewelry/models/hardware.py:65
+#: swing/jewelry/models/jewelry_string.py:49 swing/package/models/package.py:18
 #, fuzzy
 #| msgid "purchase Link"
 msgid "Purchase Link"
 msgstr "采购链接"
 
-#: swing/jewelry/models/bead.py:93
+#: swing/jewelry/models/bead.py:92
 msgid "Shape"
 msgstr "形状"
 
-#: swing/jewelry/models/bead.py:94 swing/jewelry/models/hardware.py:71
+#: swing/jewelry/models/bead.py:93 swing/jewelry/models/hardware.py:70
 msgid "Material"
 msgstr "材质"
 
-#: swing/jewelry/models/bead.py:97 swing/jewelry/models/jewelry.py:99
-#: swing/jewelry/models/jewelry.py:104
+#: swing/jewelry/models/bead.py:96 swing/jewelry/models/jewelry.py:97
+#: swing/jewelry/models/jewelry.py:102
 msgid "Bead"
 msgstr "珠子"
 
-#: swing/jewelry/models/bead.py:98 swing/jewelry/models/jewelry.py:105
+#: swing/jewelry/models/bead.py:97 swing/jewelry/models/jewelry.py:103
 msgid "Beads"
 msgstr "珠子"
 
@@ -143,12 +149,12 @@ msgstr "宽度"
 msgid "Type"
 msgstr "类型"
 
-#: swing/jewelry/models/hardware.py:75 swing/jewelry/models/jewelry.py:117
-#: swing/jewelry/models/jewelry.py:126
+#: swing/jewelry/models/hardware.py:74 swing/jewelry/models/jewelry.py:115
+#: swing/jewelry/models/jewelry.py:124
 msgid "Hardware"
 msgstr "五金件"
 
-#: swing/jewelry/models/hardware.py:76 swing/jewelry/models/jewelry.py:127
+#: swing/jewelry/models/hardware.py:75 swing/jewelry/models/jewelry.py:125
 msgid "Hardwares"
 msgstr "五金件"
 
@@ -168,35 +174,35 @@ msgstr "首饰类型"
 msgid "Serious"
 msgstr "系列"
 
-#: swing/jewelry/models/jewelry.py:60 swing/jewelry/models/jewelry.py:61
+#: swing/jewelry/models/jewelry.py:61 swing/jewelry/models/jewelry.py:62
 msgid "Jewelry"
 msgstr "首饰"
 
-#: swing/jewelry/models/jewelry.py:100 swing/jewelry/models/jewelry.py:118
-#: swing/jewelry/models/jewelry.py:144 swing/jewelry/models/jewelry.py:165
+#: swing/jewelry/models/jewelry.py:98 swing/jewelry/models/jewelry.py:116
+#: swing/jewelry/models/jewelry.py:142 swing/jewelry/models/jewelry.py:163
 msgid "Quantity"
 msgstr "数量"
 
-#: swing/jewelry/models/jewelry.py:121
+#: swing/jewelry/models/jewelry.py:119
 msgid "Is Main?"
 msgstr "包含在主体？"
 
-#: swing/jewelry/models/jewelry.py:142 swing/jewelry/models/jewelry.py:147
-#: swing/jewelry/models/jewelry_string.py:54
+#: swing/jewelry/models/jewelry.py:140 swing/jewelry/models/jewelry.py:145
+#: swing/jewelry/models/jewelry_string.py:53
 msgid "Jewelry String"
 msgstr "首饰线材"
 
-#: swing/jewelry/models/jewelry.py:148
-#: swing/jewelry/models/jewelry_string.py:55
+#: swing/jewelry/models/jewelry.py:146
+#: swing/jewelry/models/jewelry_string.py:54
 msgid "Jewelry Strings"
 msgstr "首饰线材"
 
-#: swing/jewelry/models/jewelry.py:163 swing/jewelry/models/jewelry.py:168
-#: swing/package/models/package.py:21
+#: swing/jewelry/models/jewelry.py:161 swing/jewelry/models/jewelry.py:166
+#: swing/package/models/package.py:22
 msgid "Package"
 msgstr "包装"
 
-#: swing/jewelry/models/jewelry.py:169 swing/package/models/package.py:22
+#: swing/jewelry/models/jewelry.py:167 swing/package/models/package.py:23
 msgid "Packages"
 msgstr "包装"
 

@@ -1,6 +1,7 @@
 from django.db.models import PROTECT
 from django.db.models import BooleanField
 from django.db.models import CharField
+from django.db.models import DecimalField
 from django.db.models import ForeignKey
 from django.db.models import ManyToManyField
 from django.db.models import Model
@@ -51,6 +52,7 @@ class Jewelry(Model):
     name = CharField(max_length=255, verbose_name=_("Name"))
     serious = ForeignKey(Series, on_delete=PROTECT, verbose_name=_("Serious"))
     type = ForeignKey(JewelryType, on_delete=PROTECT, verbose_name=_("Type"))
+    price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
     beads = ManyToManyField(Bead, through="LinkJewelryBead")
     hardwares = ManyToManyField(Hardware, through="LinkJewelryHardware")
     strings = ManyToManyField(JewelryString, through="LinkJewelryJewelryString")
@@ -71,20 +73,20 @@ class Jewelry(Model):
             length += linkjewelryhardware.hardware.length * linkjewelryhardware.quantity
         return length
 
-    def price(self):
-        price = 0
+    def cost(self):
+        cost = 0
         for linkjewelrybead in self.linkjewelrybead_set.all():
-            price += linkjewelrybead.bead.price * linkjewelrybead.quantity
+            cost += linkjewelrybead.bead.price * linkjewelrybead.quantity
         for linkjewelryhardware in self.linkjewelryhardware_set.all():
-            price += linkjewelryhardware.hardware.price * linkjewelryhardware.quantity
+            cost += linkjewelryhardware.hardware.price * linkjewelryhardware.quantity
         for linkjewelryjewelrystring in self.linkjewelryjewelrystring_set.all():
-            price += (
+            cost += (
                 linkjewelryjewelrystring.jewelry_string.price
                 * linkjewelryjewelrystring.quantity
             )
         for linkjewelrypackage in self.linkjewelrypackage_set.all():
-            price += linkjewelrypackage.package.price * linkjewelrypackage.quantity
-        return price
+            cost += linkjewelrypackage.package.price * linkjewelrypackage.quantity
+        return cost
 
 
 class LinkJewelryBead(Model):
