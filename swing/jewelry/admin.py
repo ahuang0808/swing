@@ -61,7 +61,15 @@ class JewelryAdmin(ModelAdmin):
         LinkJewelryJewelryStringInline,
         LinkJewelryPackageInline,
     ]
-    list_display = ("name", "main_image", "design_image", "length", "get_cost", "price")
+    list_display = (
+        "name",
+        "serious",
+        "main_image",
+        "design_image",
+        "length",
+        "get_cost",
+        "price",
+    )
 
     @admin.display(
         description=_("Cost"),
