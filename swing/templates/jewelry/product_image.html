@@ -1,0 +1,29 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ product.name }}</title>
+    <link href="{% static 'css/product_image.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/product_image.js' %}"></script>
+  </head>
+  <body>
+    {% if image_url %}
+      <a href="{{ image_url }}"
+         onclick="event.preventDefault(); showImageModal('{{ image_url }}');">
+        <img src="{{ image_url }}"
+             alt="{{ product.name }}"
+             width="150"
+             height="150" />
+      </a>
+      <!-- 模态对话框 -->
+      <div id="image-modal" class="modal">
+        <span class="close"
+              onclick="document.getElementById('image-modal').style.display='none'">×</span>
+        <img class="modal-content" id="modal-image"  alt="Image" />
+      </div>
+    {% else %}
+      <p>No image available</p>
+    {% endif %}
+  </body>
+</html>

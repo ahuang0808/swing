@@ -1,6 +1,11 @@
+from pathlib import Path
+
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin import TabularInline
+from django.template.loader import render_to_string
+from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
 from swing.jewelry.models.bead import Bead
@@ -56,13 +61,43 @@ class JewelryAdmin(ModelAdmin):
         LinkJewelryJewelryStringInline,
         LinkJewelryPackageInline,
     ]
-    list_display = ("name", "length", "get_cost", "price")
+    list_display = ("name", "main_image", "design_image", "length", "get_cost", "price")
 
     @admin.display(
         description=_("Cost"),
     )
     def get_cost(self, obj):
         return obj.cost()
+
+    @admin.display(
+        description=_("Main Image"),
+    )
+    def main_image(self, obj):
+        return self.image(obj, f"{obj.serious.name}/{obj.name}/产品图/02.导出/001.jpg")
+
+    @admin.display(
+        description=_("Design Image"),
+    )
+    def design_image(self, obj):
+        return self.image(obj, f"{obj.serious.name}/{obj.name}/设计图/02.导出/001.jpg")
+
+    def image(self, obj, filepath):
+        # 文件路径
+        image_path = Path(settings.MEDIA_ROOT, filepath)
+        # 使用相对路径生成URL
+        image_url = Path(settings.MEDIA_URL, filepath)
+
+        if Path.exists(image_path):
+            html_content = render_to_string(
+                Path(settings.APPS_DIR, "templates/jewelry/product_image.html"),
+                {
+                    "image_url": image_url,
+                    "product": obj,
+                },
+            )
+
+            return format_html(html_content)
+        return "No Image"
 
 
 @admin.register(Bead)

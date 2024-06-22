@@ -166,7 +166,8 @@ STATICFILES_FINDERS = [
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR / "media")
+PRODUCTS_ROOT = "/Users/ahuang/Documents/Swing/产品"
+MEDIA_ROOT = PRODUCTS_ROOT
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = "/media/"
 
