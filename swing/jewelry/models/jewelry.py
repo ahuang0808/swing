@@ -50,6 +50,7 @@ class Jewelry(Model):
     """
 
     name = CharField(max_length=255, verbose_name=_("Name"))
+    title = CharField(max_length=255, verbose_name=_("Title"))
     serious = ForeignKey(Series, on_delete=PROTECT, verbose_name=_("Serious"))
     type = ForeignKey(JewelryType, on_delete=PROTECT, verbose_name=_("Type"))
     length = PositiveIntegerField(
