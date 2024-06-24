@@ -191,7 +191,6 @@ msgid "Introduction"
 msgstr "介绍"
 
 #: swing/jewelry/models/jewelry.py:62
-#, fuzzy
 msgid "Inspiration"
 msgstr "灵感"
 

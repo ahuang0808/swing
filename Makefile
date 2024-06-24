@@ -15,6 +15,11 @@ run:    ## run site
 	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
 .PHONY: run
 
+build:    ## build
+	$(DJANGO_MANAGE) makemigrations
+	$(DJANGO_ADMIN) makemessages -l zh_HAns
+.PHONY: build
+
 update:    ## update
 	git pull --rebase
 	$(DJANGO_MANAGE) migrate
