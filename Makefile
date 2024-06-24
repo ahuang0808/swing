@@ -15,5 +15,6 @@ up:    ## run site
 	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
 .PHONY: up
 
-release    ## release
+release:    ## release
+	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
 .PHONY: release
