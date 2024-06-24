@@ -7,14 +7,16 @@ DJANGO_ADMIN := $(DOT_ENV) $(POETRY_RUN) django-admin
 
 help:  ## print this help
 	@# https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_/-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	@echo ""
 .PHONY: help
 
-up:    ## run site
+run:    ## run site
 	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
-.PHONY: up
+.PHONY: run
 
-release:    ## release
-	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
-.PHONY: release
+update:    ## update
+	git pull --rebase
+	$(DJANGO_MANAGE) migrate
+	$(DJANGO_ADMIN) compilemessages
+.PHONY: update
