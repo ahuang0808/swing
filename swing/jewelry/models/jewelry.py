@@ -6,6 +6,7 @@ from django.db.models import ForeignKey
 from django.db.models import ManyToManyField
 from django.db.models import Model
 from django.db.models import PositiveIntegerField
+from django.db.models import TextField
 from django.utils.translation import gettext_lazy as _
 
 from swing.jewelry.models.bead import Bead
@@ -58,6 +59,8 @@ class Jewelry(Model):
         help_text=_("The unit is millimeter."),
     )
     price = DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
+    introduction = TextField(blank=True, verbose_name=_("Introduction"))
+    inspiration = TextField(blank=True, verbose_name=_("Inspiration"))
     beads = ManyToManyField(Bead, through="LinkJewelryBead")
     hardwares = ManyToManyField(Hardware, through="LinkJewelryHardware")
     strings = ManyToManyField(JewelryString, through="LinkJewelryJewelryString")
