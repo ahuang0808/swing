@@ -63,13 +63,20 @@ class JewelryAdmin(ModelAdmin):
     ]
     list_display = (
         "name",
-        "serious",
+        "serious_link",
         "main_image",
         "design_image",
         "length",
         "get_cost",
         "price",
     )
+
+    @admin.display(
+        description=_("Serious"),
+    )
+    def serious_link(self, obj):
+        url = obj.serious.get_absolute_url()
+        return format_html('<a href="{}">{}</a>', url, obj.serious.name)
 
     @admin.display(
         description=_("Cost"),
