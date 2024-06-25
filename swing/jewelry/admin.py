@@ -130,11 +130,9 @@ class JewelryInline(admin.TabularInline):
     model = Jewelry
     fields = ["view_link"]
     readonly_fields = ["view_link"]
+    can_delete = False
     extra = 0
 
-    @admin.display(
-        description="View Jewelry",
-    )
     @admin.display(
         description=_("Jewelry"),
     )
@@ -144,6 +142,9 @@ class JewelryInline(admin.TabularInline):
             reverse("admin:jewelry_jewelry_change", args=[obj.id]),
             obj.name,
         )
+
+    def has_add_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(Series)
