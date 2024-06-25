@@ -126,12 +126,33 @@ class BeadAdmin(ModelAdmin):
     ]
 
 
+class JewelryInline(admin.TabularInline):
+    model = Jewelry
+    fields = ["view_link"]
+    readonly_fields = ["view_link"]
+    extra = 0
+
+    @admin.display(
+        description="View Jewelry",
+    )
+    @admin.display(
+        description=_("Jewelry"),
+    )
+    def view_link(self, obj):
+        return format_html(
+            '<a href="{}">{}</a>',
+            reverse("admin:jewelry_jewelry_change", args=[obj.id]),
+            obj.name,
+        )
+
+
 @admin.register(Series)
 class SeriesAdmin(admin.ModelAdmin):
     list_display = ("name", "view_jewelry")
+    inlines = [JewelryInline]
 
     @admin.display(
-        description=_("Related Jewelry"),
+        description=_("Jewelry"),
     )
     def view_jewelry(self, obj):
         jewelries = obj.jewelry_set.all()
