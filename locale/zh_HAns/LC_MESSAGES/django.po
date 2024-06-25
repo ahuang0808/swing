@@ -26,7 +26,8 @@ msgstr "英文"
 msgid "Simpified Chinese"
 msgstr "简体中文"
 
-#: swing/jewelry/admin.py:76
+#: swing/jewelry/models/jewelry.py:26 swing/jewelry/models/jewelry.py:27
+#: swing/jewelry/models/jewelry.py:55 swing/jewelry/admin.py:76
 msgid "Series"
 msgstr "系列"
 
@@ -174,11 +175,6 @@ msgstr "五金件"
 #: swing/jewelry/models/hardware.py:75 swing/jewelry/models/jewelry.py:126
 msgid "Hardwares"
 msgstr "五金件"
-
-#: swing/jewelry/models/jewelry.py:26 swing/jewelry/models/jewelry.py:27
-#: swing/jewelry/models/jewelry.py:55
-msgid "Series"
-msgstr "系列"
 
 #: swing/jewelry/models/jewelry.py:41
 msgid "Jewelry Type"
