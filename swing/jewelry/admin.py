@@ -64,7 +64,7 @@ class JewelryAdmin(ModelAdmin):
     ]
     list_display = (
         "name",
-        "serious_link",
+        "series_link",
         "main_image",
         "design_image",
         "length",
@@ -73,13 +73,13 @@ class JewelryAdmin(ModelAdmin):
     )
 
     @admin.display(
-        description=_("Serious"),
+        description=_("Series"),
     )
-    def serious_link(self, obj):
+    def series_link(self, obj):
         return format_html(
             '<a href="{}">{}</a>',
-            reverse("admin:jewelry_series_change", args=[str(obj.serious.id)]),
-            obj.serious.name,
+            reverse("admin:jewelry_series_change", args=[str(obj.series.id)]),
+            obj.series.name,
         )
 
     @admin.display(
@@ -92,13 +92,13 @@ class JewelryAdmin(ModelAdmin):
         description=_("Main Image"),
     )
     def main_image(self, obj):
-        return self.image(obj, f"{obj.serious.name}/{obj.name}/产品图/02.导出/001.jpg")
+        return self.image(obj, f"{obj.series.name}/{obj.name}/产品图/02.导出/001.jpg")
 
     @admin.display(
         description=_("Design Image"),
     )
     def design_image(self, obj):
-        return self.image(obj, f"{obj.serious.name}/{obj.name}/设计图/02.导出/001.jpg")
+        return self.image(obj, f"{obj.series.name}/{obj.name}/设计图/02.导出/001.jpg")
 
     def image(self, obj, filepath):
         # 文件路径

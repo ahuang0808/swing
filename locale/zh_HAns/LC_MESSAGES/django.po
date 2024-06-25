@@ -27,7 +27,7 @@ msgid "Simpified Chinese"
 msgstr "简体中文"
 
 #: swing/jewelry/admin.py:76
-msgid "Serious"
+msgid "Series"
 msgstr "系列"
 
 #: swing/jewelry/admin.py:86
