@@ -7,7 +7,6 @@ from django.db.models import ManyToManyField
 from django.db.models import Model
 from django.db.models import PositiveIntegerField
 from django.db.models import TextField
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from swing.jewelry.models.bead import Bead
@@ -29,9 +28,6 @@ class Series(Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse("admin:jewelry_series_change", args=[str(self.id)])
 
 
 class JewelryType(Model):

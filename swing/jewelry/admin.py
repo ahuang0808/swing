@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin import TabularInline
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
@@ -75,8 +76,11 @@ class JewelryAdmin(ModelAdmin):
         description=_("Serious"),
     )
     def serious_link(self, obj):
-        url = obj.serious.get_absolute_url()
-        return format_html('<a href="{}">{}</a>', url, obj.serious.name)
+        return format_html(
+            '<a href="{}">{}</a>',
+            reverse("admin:jewelry_series_change", args=[str(obj.serious.id)]),
+            obj.serious.name,
+        )
 
     @admin.display(
         description=_("Cost"),
@@ -122,6 +126,26 @@ class BeadAdmin(ModelAdmin):
     ]
 
 
+@admin.register(Series)
+class SeriesAdmin(admin.ModelAdmin):
+    list_display = ("name", "view_jewelry")
+
+    @admin.display(
+        description=_("Related Jewelry"),
+    )
+    def view_jewelry(self, obj):
+        jewelries = obj.jewelry_set.all()
+        links = [
+            format_html(
+                '<a href="{}">{}</a>',
+                reverse("admin:jewelry_jewelry_change", args=[jewelry.id]),
+                jewelry.name,
+            )
+            for jewelry in jewelries
+        ]
+        return format_html(", ".join(links))
+
+
 admin.site.register(BeadMaterial)
 admin.site.register(BeadShape)
 admin.site.register(BeadShapeAttribute)
@@ -131,5 +155,4 @@ admin.site.register(HardwareMaterial)
 admin.site.register(HardwareType)
 admin.site.register(JewelryString)
 admin.site.register(JewelryStringType)
-admin.site.register(Series)
 admin.site.register(JewelryType)
