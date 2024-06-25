@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 18:05+0800\n"
+"POT-Creation-Date: 2024-06-25 18:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "英文"
 msgid "Simpified Chinese"
 msgstr "简体中文"
 
-#: swing/jewelry/admin.py:76 swing/jewelry/models/jewelry.py:55
+#: swing/jewelry/admin.py:76
 msgid "Serious"
 msgstr "系列"
 
@@ -176,6 +176,7 @@ msgid "Hardwares"
 msgstr "五金件"
 
 #: swing/jewelry/models/jewelry.py:26 swing/jewelry/models/jewelry.py:27
+#: swing/jewelry/models/jewelry.py:55
 msgid "Series"
 msgstr "系列"
 
