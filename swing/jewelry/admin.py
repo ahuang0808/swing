@@ -32,26 +32,31 @@ from swing.jewelry.models.jewelry_string import JewelryStringType
 class LinkJewelryBeadInline(TabularInline):
     model = LinkJewelryBead
     extra = 1  # 提供一个额外的空白表单
+    autocomplete_fields = ("bead",)
 
 
 class LinkJewelryHardwareInline(TabularInline):
     model = LinkJewelryHardware
     extra = 1
+    autocomplete_fields = ("hardware",)
 
 
 class LinkJewelryJewelryStringInline(TabularInline):
     model = LinkJewelryJewelryString
     extra = 1
+    autocomplete_fields = ("jewelry_string",)
 
 
 class LinkBeadBeadShapeAttributeInline(TabularInline):
     model = LinkBeadBeadShapeAttribute
     extra = 1
+    autocomplete_fields = ("bead_shape_attribute",)
 
 
 class LinkJewelryPackageInline(TabularInline):
     model = LinkJewelryPackage
     extra = 1
+    autocomplete_fields = ("package",)
 
 
 @admin.register(Jewelry)
@@ -144,7 +149,9 @@ class BeadAdmin(ModelAdmin):
         "color__name",
         "material__name",
         "shape__name",
+        "linkbeadbeadshapeattribute__bead_shape_attribute__name",
     )
+    autocomplete_fields = ("color",)
 
 
 class JewelryInline(admin.TabularInline):
@@ -208,6 +215,7 @@ class HardwareAdmin(ModelAdmin):
         "material__name",
         "type__name",
     )
+    autocomplete_fields = ("color",)
 
 
 @admin.register(HardwareMaterial)
@@ -267,6 +275,7 @@ class JewelryStringAdmin(ModelAdmin):
         "color__name",
         "type__name",
     )
+    autocomplete_fields = ("color",)
 
 
 @admin.register(JewelryStringType)
