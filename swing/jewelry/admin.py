@@ -71,6 +71,11 @@ class JewelryAdmin(ModelAdmin):
         "get_cost",
         "price",
     )
+    list_filter = ("series__name",)
+    search_fields = (
+        "name",
+        "series__name",
+    )
 
     @admin.display(
         description=_("Series"),
@@ -124,6 +129,22 @@ class BeadAdmin(ModelAdmin):
     inlines = [
         LinkBeadBeadShapeAttributeInline,
     ]
+    list_display = (
+        "__str__",
+        "color",
+        "material",
+        "shape",
+    )
+    list_filter = (
+        "color",
+        "material",
+        "shape",
+    )
+    search_fields = (
+        "color__name",
+        "material__name",
+        "shape__name",
+    )
 
 
 class JewelryInline(admin.TabularInline):
@@ -151,6 +172,7 @@ class JewelryInline(admin.TabularInline):
 class SeriesAdmin(admin.ModelAdmin):
     list_display = ("name", "view_jewelry")
     inlines = [JewelryInline]
+    search_fields = ("name",)
 
     @admin.display(
         description=_("Jewelry"),
@@ -168,13 +190,86 @@ class SeriesAdmin(admin.ModelAdmin):
         return format_html(", ".join(links))
 
 
-admin.site.register(BeadMaterial)
-admin.site.register(BeadShape)
-admin.site.register(BeadShapeAttribute)
-admin.site.register(Color)
-admin.site.register(Hardware)
-admin.site.register(HardwareMaterial)
-admin.site.register(HardwareType)
-admin.site.register(JewelryString)
-admin.site.register(JewelryStringType)
-admin.site.register(JewelryType)
+@admin.register(Hardware)
+class HardwareAdmin(ModelAdmin):
+    list_display = (
+        "__str__",
+        "color",
+        "material",
+        "type",
+    )
+    list_filter = (
+        "color",
+        "material",
+        "type",
+    )
+    search_fields = (
+        "color__name",
+        "material__name",
+        "type__name",
+    )
+
+
+@admin.register(HardwareMaterial)
+class HardwareMaterialAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(HardwareType)
+class HardwareTypeAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(BeadMaterial)
+class BeadMaterialAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(BeadShape)
+class BeadShapeAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(BeadShapeAttribute)
+class BeadShapeAttributeAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(Color)
+class ColorAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(JewelryType)
+class JewelryTypeAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+
+
+@admin.register(JewelryString)
+class JewelryStringAdmin(ModelAdmin):
+    list_display = (
+        "__str__",
+        "color",
+        "type",
+    )
+    list_filter = (
+        "color",
+        "type",
+    )
+    search_fields = (
+        "color__name",
+        "type__name",
+    )
+
+
+@admin.register(JewelryStringType)
+class JewelryStringTypeAdmin(ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
