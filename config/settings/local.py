@@ -20,6 +20,7 @@ ALLOWED_HOSTS = [
     "aidens-mac-mini.local",
     "9153-91-229-133-92.ngrok-free.app",
 ]
+CSRF_TRUSTED_ORIGINS = ["*.ngrok-free.app"]
 
 # CACHES
 # ------------------------------------------------------------------------------
