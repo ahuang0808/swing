@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "aidens-mac-mini.local",
-    "a100-141-11-90-20.ngrok-free.app",
+    "9153-91-229-133-92.ngrok-free.app",
 ]
 
 # CACHES

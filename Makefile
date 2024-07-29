@@ -15,6 +15,10 @@ run:    ## run site
 	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
 .PHONY: run
 
+ngrok:    ## run ngrok
+	ngrok start swing
+.PHONY: run
+
 build:    ## build
 	$(DJANGO_MANAGE) makemigrations
 	$(DJANGO_ADMIN) makemessages -l zh_HAns
