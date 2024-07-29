@@ -75,7 +75,6 @@ class JewelryAdmin(ModelAdmin):
         "main_image",
         "design_image",
         "length",
-        "get_cost",
         "price",
     )
     list_filter = ("series__name",)
@@ -93,12 +92,6 @@ class JewelryAdmin(ModelAdmin):
             reverse("admin:jewelry_series_change", args=[str(obj.series.id)]),
             obj.series.name,
         )
-
-    @admin.display(
-        description=_("Cost"),
-    )
-    def get_cost(self, obj):
-        return obj.cost()
 
     @admin.display(
         description=_("Main Image"),
