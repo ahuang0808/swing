@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 18:07+0800\n"
+"POT-Creation-Date: 2024-07-29 13:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,24 +26,24 @@ msgstr "英文"
 msgid "Simpified Chinese"
 msgstr "简体中文"
 
-#: swing/jewelry/models/jewelry.py:26 swing/jewelry/models/jewelry.py:27
-#: swing/jewelry/models/jewelry.py:55 swing/jewelry/admin.py:76
+#: swing/jewelry/admin.py:88 swing/jewelry/models/jewelry.py:26
+#: swing/jewelry/models/jewelry.py:27 swing/jewelry/models/jewelry.py:55
 msgid "Series"
 msgstr "系列"
 
-#: swing/jewelry/admin.py:86
+#: swing/jewelry/admin.py:98
 msgid "Cost"
 msgstr "成本"
 
-#: swing/jewelry/admin.py:92
+#: swing/jewelry/admin.py:104
 msgid "Main Image"
 msgstr "主图"
 
-#: swing/jewelry/admin.py:98
+#: swing/jewelry/admin.py:110
 msgid "Design Image"
 msgstr "设计图"
 
-#: swing/jewelry/admin.py:137 swing/jewelry/admin.py:156
+#: swing/jewelry/admin.py:167 swing/jewelry/admin.py:187
 #: swing/jewelry/models/jewelry.py:70 swing/jewelry/models/jewelry.py:71
 msgid "Jewelry"
 msgstr "首饰"

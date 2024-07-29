@@ -9,6 +9,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
+from swing.jewelry.forms import JewelryForm
 from swing.jewelry.models.bead import Bead
 from swing.jewelry.models.bead import BeadMaterial
 from swing.jewelry.models.bead import BeadShape
@@ -61,6 +62,7 @@ class LinkJewelryPackageInline(TabularInline):
 
 @admin.register(Jewelry)
 class JewelryAdmin(ModelAdmin):
+    form = JewelryForm
     inlines = [
         LinkJewelryBeadInline,
         LinkJewelryHardwareInline,
