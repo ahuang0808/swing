@@ -1,0 +1,7 @@
+tunnels:
+  example:
+    proto: http
+    addr: 8000
+    oauth:
+      provider: "google"
+      allow_emails: ["ahuang9688@gmail.com", "ffjingye@gmail.com"]
