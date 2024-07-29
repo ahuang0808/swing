@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from swing.jewelry.models.jewelry import Jewelry
 
@@ -7,7 +8,7 @@ class JewelryForm(forms.ModelForm):
     cost = forms.DecimalField(
         max_digits=10,
         decimal_places=2,
-        label="Cost",
+        label=_("Cost"),
         required=False,
         widget=forms.TextInput(attrs={"readonly": "readonly"}),
     )
