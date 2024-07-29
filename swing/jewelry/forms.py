@@ -9,6 +9,7 @@ class JewelryForm(forms.ModelForm):
         max_digits=10,
         decimal_places=2,
         label=_("Cost"),
+        help_text=_("Automatic calculation, no manual input required."),
         required=False,
         widget=forms.TextInput(attrs={"readonly": "readonly"}),
     )

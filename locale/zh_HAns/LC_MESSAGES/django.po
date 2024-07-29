@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 13:59+0800\n"
+"POT-Creation-Date: 2024-07-29 14:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,10 @@ msgstr "首饰"
 #: swing/jewelry/forms.py:11
 msgid "Cost"
 msgstr "成本"
+
+#: swing/jewelry/forms.py:12
+msgid "Automatic calculation, no manual input required."
+msgstr "自动计算，无需手动填写"
 
 #: swing/jewelry/models/bead.py:18 swing/jewelry/models/bead.py:33
 #: swing/jewelry/models/bead.py:48 swing/jewelry/models/color.py:11
